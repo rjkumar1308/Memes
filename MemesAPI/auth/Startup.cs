@@ -22,7 +22,7 @@ namespace WebApplication2.auth
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(2),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(10),
                 Provider = myProvider
             };
             app.UseOAuthAuthorizationServer(options);
