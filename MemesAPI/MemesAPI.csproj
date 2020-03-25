@@ -192,7 +192,7 @@
     <Compile Include="auth\MyAuthorizationServerProvider.cs" />
     <Compile Include="auth\Startup.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\CRUDController.cs" />
     <Compile Include="Controllers\MemesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1045,11 +1045,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\Login\SecurityInfo.cshtml" />
+    <Content Include="Views\CRUD\ReadData.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\CRUD\Options.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

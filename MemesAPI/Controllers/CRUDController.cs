@@ -6,10 +6,14 @@ using System.Web.Mvc;
 
 namespace MemesAPI.Controllers
 {
-    public class LoginController : Controller
+    public class CRUDController : Controller
     {
         // GET: Login
-        public ActionResult SecurityInfo()
+        public ActionResult ReadData()
+        {
+            return View();
+        }
+        public ActionResult Options()
         {
             return View();
         }
