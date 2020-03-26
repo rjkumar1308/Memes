@@ -9,30 +9,27 @@
 </head>
 <body  ng-app="appmodule" ng-controller="logincontroller">
     <h1>Admin Portal</h1>
-                <table class="table table-bordered table-striped table-condensed">
-                    <tr>
-                        <td>UserName:</td>
-                        <td>
-                            <input type="text" class="form-control"
-                                   ng-model="userLoginUserName" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Password:</td>
-                        <td>
-                            <input type="password"
-                                   class="form-control"
-                                   ng-model="userLoginPassword" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="button" value="Login" class="form-control btn btn-success"
-                                   ng-click="login()" />
-                        </td>
-                    </tr>
-                </table>
+    <table class="table table-bordered table-striped table-condensed" style="width:35%">
+        <tr align="center">
+            <td>UserName:</td>
+            <td>
+                <input type="text" class="form-control"
+                       ng-model="userLoginUserName" />
+            </td>
+        </tr>
+        <tr align="center">
+            <td>Password:</td>
+            <td>
+                <input type="password"
+                       class="form-control"
+                       ng-model="userLoginPassword" />
+            </td>
+        </tr>
+    </table>
+    <input type="button" value="Login" class="form-control btn btn-success"
+           ng-click="login()"  style="width:10%"/>
+                       
+               
 
     <div>
         <h4 style="color:red;">{{responseData}}</h4>

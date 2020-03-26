@@ -103,6 +103,20 @@ namespace MemesAPI.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, new { success = true });
         }
 
+        [Authorize(Roles = "admin")]
+        [Route("api/getaccess")]
+        [HttpGet]
+        public HttpResponseMessage getAccess()
+        {
+
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = "Success"
+            });
+        }
+
+
 
     }
 }

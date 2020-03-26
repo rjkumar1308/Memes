@@ -17,5 +17,9 @@ namespace MemesAPI.Controllers
         {
             return View();
         }
+        public ActionResult AddNewMeme()
+        {
+            return View();
+        }
     }
 }

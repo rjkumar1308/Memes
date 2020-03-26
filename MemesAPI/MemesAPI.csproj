@@ -1021,10 +1021,12 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\MyScripts\AddNewMeme.js" />
     <Content Include="Scripts\MyScripts\MemeController.js" />
     <Content Include="Scripts\MyScripts\MemeService.js" />
     <Content Include="Scripts\MyScripts\LoginLogic.js" />
     <Content Include="Scripts\MyScripts\Module.js" />
+    <Content Include="Scripts\MyScripts\MyOptions.js" />
     <Content Include="Scripts\sitemap.xml" />
     <Content Include="Scripts\test-bundles\angular-aria.js" />
     <Content Include="Scripts\test-bundles\angular-cookies.js" />
@@ -1051,6 +1053,7 @@
     <Content Include="Views\CRUD\ReadData.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CRUD\Options.cshtml" />
+    <Content Include="Views\CRUD\AddNewMeme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

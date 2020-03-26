@@ -43,7 +43,7 @@ app.controller('logincontroller', function ($scope, loginservice) {
             sessionStorage.setItem('userName', $scope.userLoginUserName);
             sessionStorage.setItem('accessToken', resp.data.access_token);
             //sessionStorage.setItem('refreshToken', resp.data.refresh_token);
-            window.location.href = '/CRUD/ReadData';
+            window.location.href = '/CRUD/Options';
         }, function (err) {
             if (err.status == 400) {
                 $scope.responseData = "Error! Username or Password Incorrect.";
