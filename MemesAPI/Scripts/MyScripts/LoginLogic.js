@@ -5,7 +5,7 @@
         var resp = $http({
             url: "/token",
             method: "POST",
-            data: $.param({ grant_type: 'password', username: userlogin.username, password: userlogin.password }),
+            data: $.param(userlogin),
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         });
         return resp;
@@ -19,12 +19,12 @@ app.controller('logincontroller', function ($scope, loginservice) {
 
     $scope.userLoginUserName = "";
     $scope.userLoginPassword = "";
+    $scope.accessToken = "";    
+    //$scope.refreshToken = "";
+    //Ends Here    
 
-    $scope.accessToken = "";
-    $scope.refreshToken = "";
-    //Ends Here
-    
-    //Function to Login. This will generate Token 
+
+    //Function to Login. This will generate Token
     $scope.login = function () {
         //This is the information to pass for token based authentication
         var userLogin = {
@@ -35,9 +35,7 @@ app.controller('logincontroller', function ($scope, loginservice) {
 
         var promiselogin = loginservice.login(userLogin);
 
-        promiselogin.then(function (resp) {
-
-            
+        promiselogin.then(function (resp) {            
             //Store the token information in the SessionStorage
             //So that it can be accessed for other views
             sessionStorage.setItem('userName', $scope.userLoginUserName);

@@ -21,5 +21,25 @@ namespace MemesAPI.Controllers
         {
             return View();
         }
+
+        public ActionResult AddTags()
+        {
+            return View();
+        }
+
+        public ActionResult DeleteTags()
+        {
+            return View();
+        }
+
+        public ActionResult UpdateURL()
+        {
+            return View();
+        }
+
+        public ActionResult DeleteImage()
+        {
+            return View();
+        }
     }
 }

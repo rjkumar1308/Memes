@@ -58,54 +58,93 @@ namespace MemesAPI.Models
 
         //shaklen's code below
 
-        public void update_record(Memes img)
+        public string update_record(Memes img)
         {
-            SqlCommand com = new SqlCommand("Images_Update", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id", img.ImageId);
-            com.Parameters.AddWithValue("@url", img.Url);
-            con.Open();
-            com.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                SqlCommand com = new SqlCommand("Images_Update", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@id", img.ImageId);
+                com.Parameters.AddWithValue("@url", img.Url);
+                con.Open();
+                com.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+            return "Success";
+            
         }
 
-        public void delete_record(int id)
+        public string delete_record(int id)
         {
-            SqlCommand com = new SqlCommand("Images_Delete", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id", id);
-            con.Open();
-            com.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                SqlCommand com = new SqlCommand("Images_Delete", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@id", id);
+                con.Open();
+                com.ExecuteNonQuery();
+                con.Close();
+
+            }
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+            return "Success";
+
 
         }
 
-        public void update_add_tag(int id, List<string> tag)
+        public string update_add_tag(int id, List<string> tag)
         {
             //adding tag 
-            string temp = m.ListToString(tag);
-            SqlCommand com = new SqlCommand("update_add_tag", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id", id);
-            com.Parameters.AddWithValue("@tags", temp);
-            con.Open();
-            com.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                string temp = m.ListToString(tag);
+                SqlCommand com = new SqlCommand("update_add_tag", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@tags", temp);
+                con.Open();
+                com.ExecuteNonQuery();
+                con.Close();
 
 
+            }
+
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+            return "Success";
         }
 
-        public void update_delete_tags(int id, List<string> tag)
+        public string update_delete_tags(int id, List<string> tag)
         {
             //deleting tag from image only 
-            string temp = m.ListToString(tag);
-            SqlCommand com = new SqlCommand("update_delete_tags", con);
-            com.CommandType = CommandType.StoredProcedure;
-            com.Parameters.AddWithValue("@id", id);
-            com.Parameters.AddWithValue("@tags", temp);
-            con.Open();
-            com.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                string temp = m.ListToString(tag);
+                SqlCommand com = new SqlCommand("update_delete_tags", con);
+                com.CommandType = CommandType.StoredProcedure;
+                com.Parameters.AddWithValue("@id", id);
+                com.Parameters.AddWithValue("@tags", temp);
+                con.Open();
+                com.ExecuteNonQuery();
+                con.Close();
+
+            }
+
+
+            catch (Exception e)
+            {
+                return e.ToString();
+            }
+            return "Success";
 
         }
     }

@@ -2,13 +2,14 @@
     this.get = function () {
 
         var accesstoken = sessionStorage.getItem('accessToken');
-
         var authHeaders = {};
-        if (accesstoken) {
+        if (accesstoken)
+        {
             authHeaders.Authorization = 'Bearer ' + accesstoken;
         }
 
-        var response = $http({
+        var response = $http(
+        {
             url: "/api/getallimages",
             method: "GET",
             headers: authHeaders
@@ -31,15 +32,33 @@
         });
         return response;
     };
+
+    this.DeleteImage = function ($Id) {
+
+        var accesstoken = sessionStorage.getItem('accessToken');
+        var authHeaders = {};
+        if (accesstoken) {
+            authHeaders.Authorization = 'Bearer ' + accesstoken;
+        }
+        console.log($Id);
+        console.log(typeof $Id);
+        $data = JSON.stringify({ ImageId: $Id });
+        var response = $http({
+            url: "/api/delete",
+            method: "POST",
+            headers: authHeaders,
+            data: $data
+        });
+        return response;
+    };
+
 });
 
 app.controller('optioncontroller', function ($scope, optionservice) {
     $scope.Memes = [];
-
-    $scope.Message = "";
     $scope.userName = sessionStorage.getItem('userName');
-
     LoadMemes();
+
 
     function LoadMemes() {
 
@@ -68,24 +87,52 @@ app.controller('optioncontroller', function ($scope, optionservice) {
             window.location.href = '/Home/Index';
         });
     };
+
     $scope.logout = function () {
         sessionStorage.removeItem('userName');
         sessionStorage.removeItem('accessToken');
         window.location.href = '/Home/Index';
     };
+
+
     $scope.addtag = function ($id) {
-        window.location.href = '/CRUD/AddTags/?id='+$id;
+        window.location.href = '/CRUD/AddTags/?id=' + $id;
     };
+
+
     $scope.deletetag = function ($id) {
         window.location.href = '/CRUD/DeleteTags/?id=' + $id;
     };
+
+
     $scope.updateurl = function ($id) {
         window.location.href = '/CRUD/UpdateURL/?id=' + $id;
     };
+
+
     $scope.deleteimage = function ($id) {
-        window.location.href = '/CRUD/DeleteImage/?id=' + $id;
+        $id = parseInt($id);
+        var prom = optionservice.DeleteImage($id);
+        prom.then(function () {
+            window.location.reload()
+            //window.location.href = '/CRUD/Options';
+        }, function (err) {
+                if (err.status == 401) {
+                    window.alert("Error! Unauthorized");
+                }
+                else {
+                    window.alert("Error!" + err.status);
+                }
+                window.location.href = '/Home/Index';
+         });
+
+
     };
+
+
+
     $scope.addnewmeme = function () {
         window.location.href = '/CRUD/AddNewMeme';
     };
+
 });

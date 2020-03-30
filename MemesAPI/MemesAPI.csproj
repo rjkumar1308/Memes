@@ -1022,11 +1022,12 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\MyScripts\AddNewMeme.js" />
-    <Content Include="Scripts\MyScripts\MemeController.js" />
-    <Content Include="Scripts\MyScripts\MemeService.js" />
+    <Content Include="Scripts\MyScripts\addnewtags.js" />
+    <Content Include="Scripts\MyScripts\deleteexistingtags.js" />
     <Content Include="Scripts\MyScripts\LoginLogic.js" />
     <Content Include="Scripts\MyScripts\Module.js" />
     <Content Include="Scripts\MyScripts\MyOptions.js" />
+    <Content Include="Scripts\MyScripts\updatememe.js" />
     <Content Include="Scripts\sitemap.xml" />
     <Content Include="Scripts\test-bundles\angular-aria.js" />
     <Content Include="Scripts\test-bundles\angular-cookies.js" />
@@ -1036,6 +1037,7 @@
     <Content Include="Scripts\test-bundles\angular-route.js" />
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
+    <None Include="Views\CRUD\AddTags.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1050,10 +1052,11 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\version.json" />
-    <Content Include="Views\CRUD\ReadData.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CRUD\Options.cshtml" />
     <Content Include="Views\CRUD\AddNewMeme.cshtml" />
+    <Content Include="Views\CRUD\UpdateURL.cshtml" />
+    <Content Include="Views\CRUD\DeleteTags.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

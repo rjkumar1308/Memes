@@ -69,8 +69,12 @@ namespace MemesAPI.Controllers
         public HttpResponseMessage UpdateImage(Memes img)
         {
 
-            db.update_record(img);
-            return Request.CreateResponse(HttpStatusCode.OK, new { success = true });
+            string s=db.update_record(img);
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = "Success"
+            });
         }
 
 
@@ -80,7 +84,11 @@ namespace MemesAPI.Controllers
         public HttpResponseMessage Delete_Image(Memes img)
         {
             db.delete_record(img.ImageId);
-            return Request.CreateResponse(HttpStatusCode.OK, new { success = true });
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = "Success"
+            });
         }
 
 
@@ -90,7 +98,11 @@ namespace MemesAPI.Controllers
         public HttpResponseMessage update_add_tag(Memes img)
         {
             db.update_add_tag(img.ImageId, img.Tags);
-            return Request.CreateResponse(HttpStatusCode.OK, new { success = true });
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = "Success"
+            });
         }
 
 
@@ -100,7 +112,11 @@ namespace MemesAPI.Controllers
         public HttpResponseMessage update_delete_tags(Memes img)
         {
             db.update_delete_tags(img.ImageId, img.Tags);
-            return Request.CreateResponse(HttpStatusCode.OK, new { success = true });
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = "Success"
+            });
         }
 
         [Authorize(Roles = "admin")]
