@@ -197,6 +197,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserDeatils.cs" />
     <Compile Include="Models\DBManager.cs" />
     <Compile Include="Models\Memes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -207,6 +208,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="dropdown.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -1023,10 +1025,13 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\MyScripts\AddNewMeme.js" />
     <Content Include="Scripts\MyScripts\addnewtags.js" />
+    <Content Include="Scripts\MyScripts\ChangePasswordLogic.js" />
+    <Content Include="Scripts\MyScripts\DeleteAccount.js" />
     <Content Include="Scripts\MyScripts\deleteexistingtags.js" />
     <Content Include="Scripts\MyScripts\LoginLogic.js" />
     <Content Include="Scripts\MyScripts\Module.js" />
     <Content Include="Scripts\MyScripts\MyOptions.js" />
+    <Content Include="Scripts\MyScripts\SignUpLogic.js" />
     <Content Include="Scripts\MyScripts\updatememe.js" />
     <Content Include="Scripts\sitemap.xml" />
     <Content Include="Scripts\test-bundles\angular-aria.js" />
@@ -1038,7 +1043,9 @@
     <Content Include="Scripts\test-bundles\angular-sanitize.js" />
     <Content Include="Scripts\test-bundles\angular-touch.js" />
     <None Include="Views\CRUD\AddTags.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1057,6 +1064,9 @@
     <Content Include="Views\CRUD\AddNewMeme.cshtml" />
     <Content Include="Views\CRUD\UpdateURL.cshtml" />
     <Content Include="Views\CRUD\DeleteTags.cshtml" />
+    <Content Include="Views\Home\SignUp.cshtml" />
+    <Content Include="Views\CRUD\ChangePassword.cshtml" />
+    <Content Include="Views\CRUD\DeleteAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -41,5 +41,13 @@ namespace MemesAPI.Controllers
         {
             return View();
         }
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+        public ActionResult DeleteAccount()
+        {
+            return View();
+        }
     }
 }

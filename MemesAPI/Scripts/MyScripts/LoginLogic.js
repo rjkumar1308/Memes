@@ -51,4 +51,9 @@ app.controller('logincontroller', function ($scope, loginservice) {
         });
 
     };
+
+    $scope.signup = function () {
+        window.location.href = '/Home/SignUp';
+    };
+
 });

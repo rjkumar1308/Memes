@@ -40,8 +40,6 @@
         if (accesstoken) {
             authHeaders.Authorization = 'Bearer ' + accesstoken;
         }
-        console.log($Id);
-        console.log(typeof $Id);
         $data = JSON.stringify({ ImageId: $Id });
         var response = $http({
             url: "/api/delete",
@@ -111,6 +109,10 @@ app.controller('optioncontroller', function ($scope, optionservice) {
 
 
     $scope.deleteimage = function ($id) {
+        var r = confirm("Delete This Image!");
+        if (r == false) {
+            return;
+        }
         $id = parseInt($id);
         var prom = optionservice.DeleteImage($id);
         prom.then(function () {
@@ -129,7 +131,13 @@ app.controller('optioncontroller', function ($scope, optionservice) {
 
     };
 
+    $scope.changepassword = function () {
+        window.location.href = '/CRUD/ChangePassword';  
+    }
 
+    $scope.deleteaccount = function () {
+        window.location.href = '/CRUD/DeleteAccount';
+    }
 
     $scope.addnewmeme = function () {
         window.location.href = '/CRUD/AddNewMeme';

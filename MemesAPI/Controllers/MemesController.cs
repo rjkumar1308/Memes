@@ -20,6 +20,20 @@ namespace MemesAPI.Controllers
         }
 
         [AllowAnonymous]
+        [Route("api/signup")]
+        [HttpPost]
+        public HttpResponseMessage SignUp(UserDeatils deatils)
+        {
+            String s = db.SignUpHelper(deatils);
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = s
+            });
+        }
+
+
+        [AllowAnonymous]
         [Route("api/getallimages")]
         [HttpGet]
         public HttpResponseMessage getAllImages()
@@ -119,6 +133,7 @@ namespace MemesAPI.Controllers
             });
         }
 
+        
         [Authorize(Roles = "admin")]
         [Route("api/getaccess")]
         [HttpGet]
@@ -131,6 +146,49 @@ namespace MemesAPI.Controllers
                 message = "Success"
             });
         }
+
+        [Authorize(Roles = "admin")]
+        [Route("api/changepass")]
+        [HttpPost]
+        public HttpResponseMessage ChangePassword(UserDeatils details)
+        {
+            String s = db.ChangePasswordHelper(details);
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = s
+            });
+            
+        }
+
+        [Authorize(Roles = "admin")]
+        [Route("api/deleteaccount")]
+        [HttpPost]
+        public HttpResponseMessage DeleteAccount(UserDeatils details)
+        {
+            String s = db.DeleteAccountHelper(details);
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = s
+            });
+
+        }
+
+        [AllowAnonymous]
+        [Route("api/gettags")]
+        [HttpGet]
+        public HttpResponseMessage GetTags()
+        {
+            List<String> l = db.GetTagsHelper();
+            return Request.CreateResponse(HttpStatusCode.OK, new
+            {
+                success = true,
+                message = l
+            });
+
+        }
+
 
 
 

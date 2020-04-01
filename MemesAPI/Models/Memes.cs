@@ -62,6 +62,23 @@ namespace MemesAPI.Models
             return items;
         }
 
-       
+        public List<String> TagsHelper(DataSet ds)
+        {
+            List<String> ls = new List<string>();
+            foreach (DataTable table in ds.Tables)
+            {
+                foreach (DataRow row in table.Rows)
+                {
+                    foreach (object item in row.ItemArray)
+                    {
+                        String s = (item == DBNull.Value) ? String.Empty : item.ToString();
+                        ls.Add(s);
+                    }
+                }
+            }
+            return ls;
+        }
+
+
     }
 }
